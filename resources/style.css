@@ -1,17 +1,19 @@
+body,
+html {
+  height: 100%;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-h1 {
-  font-family: 'Saira Stencil One', cursive;
-}
-
 .flexbox {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  width: 100%;
 }
 
 .flexbox > * {
@@ -21,54 +23,42 @@ h1 {
 #textDump {
   padding: 1em;
   border-left: 1px solid #1e1e1e;
-}
-
-#textDump {
   height: calc(100vh - 45px);
+  font-size: 1.2em;
+  font-family: Consolas;
 }
 
 .container {
-  background: white;
-
+  background: #1e1e1e;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.logo {
-  width: 30%;
-  min-width: 200px;
-  padding: 0.5rem 1rem;
+  height: 100%;
+  color: white;
+  font-family: 'Baloo 2';
 }
 
 header {
   width: 100%;
-  background: #1e1e1e;
-  position: relative;
-  min-height: 100px;
 }
 
-header h1 {
+.logo {
+  width: 300px;
+  padding: 0.5rem 1rem;
+}
+
+main {
+  margin: 2em 0;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
-  font-size: 2.4rem;
-  text-transform: uppercase;
 }
 
-header h1 span:nth-child(2) {
-  font-size: 2.6rem;
-}
-
-.wave {
-  background-color: white;
-  background: url(/resources/wave.svg);
-  background-position: right;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 200px;
+main p {
+  font-size: 30px;
+  text-align: center;
 }
 
 .pop {
@@ -102,5 +92,168 @@ header h1 span:nth-child(2) {
       0 -5px #555555, 0 -6px #555555, 0 -7px #555555, 0 -8px #555555;
     -webkit-transform: translateY(8px);
     transform: translateY(8px);
+  }
+}
+
+.btn {
+  background: rgb(40, 139, 210);
+  color: white;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  min-width: 100px;
+  min-height: 20px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: rgb(82, 154, 206);
+}
+
+.btn img {
+  width: 32px;
+  height: auto;
+  margin: 0 10px 0 0;
+}
+
+.mobile-switch {
+  display: none;
+}
+
+@media (max-width: 1500px) {
+  #textDump {
+    font-size: 1em;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1250px) {
+  #textDump {
+    font-size: 0.9em;
+  }
+
+  main {
+    width: 400px;
+  }
+  main p {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #textDump {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 1000px) {
+  #textDump {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 800px) {
+  #textDump {
+    font-size: 1.2em;
+  }
+
+  .flexbox {
+    height: calc(100vh);
+  }
+
+  .none {
+    display: none !important;
+  }
+
+  .only {
+    width: 100% !important;
+    border: none !important;
+  }
+
+  #notification-bar {
+    display: none !important;
+  }
+
+  .mobile-switch {
+    display: block;
+  }
+
+  .switch {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Baloo 2';
+    color: white;
+  }
+
+  .switch div {
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .switch .not-picked {
+    background: rgb(111, 190, 246);
+    color: rgb(236, 232, 232);
+  }
+
+  .switch .not-picked:hover {
+    background: rgb(120, 195, 248);
+  }
+
+  .divider {
+    height: 2px;
+    background: rgb(40, 139, 210);
+  }
+
+  .switch .picked {
+    background: rgb(40, 139, 210);
+    color: white;
+    border: 1px solid rgb(52, 138, 199);
+  }
+}
+
+@media (max-width: 750px) {
+  #textDump {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 650px) {
+  #textDump {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 550px) {
+  #textDump {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 450px) {
+  #textDump {
+    font-size: 0.6em;
+  }
+}
+
+@media (max-width: 380px) {
+  #textDump {
+    font-size: 0.5em;
   }
 }

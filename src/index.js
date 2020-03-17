@@ -7,13 +7,11 @@ const htmlString = `
 <div class="container">
   <header>
     <img class="logo" src="/resources/logo.png" />
-    <h1>
-      <span>Animate</span>
-      <span>your markup</span>
-      <span>with ease!</span>
-    </h1>
-    <div class="wave"></div>
   </header>
+  <main>
+    <p><strong>markupwriter</strong> is a tiny little library that lets you animate your html code and render it at the same time, just as you were writing it live.</p>
+    <a href="https://github.com/piotrwawrzyn/markupwriter" target="_blank" class="btn"><img src="/resources/github.svg"/>Check out on GitHub</a>
+  </main>
 </div>
 `;
 
@@ -26,13 +24,50 @@ const closeTopBar = () => {
   textDumpElement.style.height = '100vh';
 };
 
+/* Handle moblie switch */
+const switchOptions = [
+  document.querySelector('.picked'),
+  document.querySelector('.not-picked')
+];
+
+const handleUnpick = el => {
+  el.classList.remove('picked');
+  el.classList.add('not-picked');
+};
+
+const handlePick = el => {
+  el.classList.add('picked');
+  el.classList.remove('not-picked');
+};
+
+for (const [index, optionElement] of switchOptions.entries()) {
+  optionElement.addEventListener('click', e => {
+    if (!e.target.classList.contains('picked')) {
+      if (index === 0) {
+        handlePick(switchOptions[0]);
+        handleUnpick(switchOptions[1]);
+      } else {
+        handlePick(switchOptions[1]);
+        handleUnpick(switchOptions[0]);
+      }
+
+      [htmlDumpElement, textDumpElement].forEach(el => {
+        el.classList.toggle('only');
+        el.classList.toggle('none');
+      });
+    }
+  });
+}
+
 const config = {
   charInterval: 60,
   displayCursor: true,
   pauseAfterTagClose: 180,
+  increasingPace: {
+    use: true,
+    maximumTimesChange: 1.15
+  },
   onFinish: () => {
-    const headerText = document.querySelector('header h1');
-    headerText.classList.add('pop');
     closeTopBar();
   }
 };
