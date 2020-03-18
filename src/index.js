@@ -9,7 +9,7 @@ const htmlString = `
     <img class="logo" src="./resources/logo.png" />
   </header>
   <main>
-    <p><strong>markupwriter</strong> is a tiny little library that lets you animate your html code and render it at the same time, just as you were writing it live.</p>
+    <p><strong>markupwriter</strong> is a tiny little library that lets you animate your html code and render it at the same time, just as if you were writing it live.</p>
     <a href="https://github.com/piotrwawrzyn/markupwriter" target="_blank" class="btn"><img src="./resources/github.svg"/>Check out on GitHub</a>
   </main>
 </div>
